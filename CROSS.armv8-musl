@@ -1,0 +1,3 @@
+CROSS_TAG=linux-arm64-musl
+CROSS_TARGET=aarch64-unknown-linux-musl
+CROSS_PREFIX=aarch64-linux-musl-

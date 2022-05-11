@@ -1,0 +1,3 @@
+CROSS_TAG=linux-armv7a
+CROSS_TARGET=armv7-unknown-linux-gnueabihf
+CROSS_PREFIX=arm-cortexa8_neon-linux-gnueabihf-
