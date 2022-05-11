@@ -1,5 +1,7 @@
 # Unofficial Geckodriver build
 
+[![CircleCI](https://circleci.com/gh/valletw/geckodriver-build/tree/main.svg?style=svg)](https://circleci.com/gh/valletw/geckodriver-build/tree/main)
+
 Build Mozilla Geckodriver binairies.
 
 ## Build binairies

@@ -1,0 +1,39 @@
+version: 2.1
+
+orbs:
+  shellcheck: circleci/shellcheck@3.1.1
+
+jobs:
+  build:
+    docker:
+      - image: docker:git
+    parameters:
+      target:
+        type: string
+        default: armv7-musl
+    steps:
+      - checkout
+      - setup_remote_docker:
+          version: 20.10.12
+      - run:
+          name: Install bash
+          command: apk add --update --no-cache bash
+      - run:
+          name: Build for target
+          command: ./build.sh << parameters.target >>
+      - store_artifacts:
+          path: build/geckodriver
+          destination: geckodriver-<< parameters.target >>
+
+workflows:
+  build:
+    jobs:
+      - shellcheck/check
+      - build:
+          matrix:
+            parameters:
+              target:
+                - armv7-musl
+                - armv7
+                - armv8-musl
+                - armv8
