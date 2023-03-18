@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  shellcheck: circleci/shellcheck@3.1.1
+  shellcheck: circleci/shellcheck@3.1.2
 
 jobs:
   build:
@@ -13,8 +13,7 @@ jobs:
         default: armv7-musl
     steps:
       - checkout
-      - setup_remote_docker:
-          version: 20.10.12
+      - setup_remote_docker
       - run:
           name: Install bash
           command: apk add --update --no-cache bash
